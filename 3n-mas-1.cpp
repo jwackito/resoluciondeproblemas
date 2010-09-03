@@ -1,3 +1,5 @@
+/*http://uva.onlinejudge.org/index.php?option=com_onlinejudge&Itemid=8&category=3&page=show_problem&problem=36 */
+
 #include <iostream>
 #include <cstdlib>
 using namespace std;
@@ -5,7 +7,6 @@ using namespace std;
 int calncicle (unsigned int n){
 	unsigned int ncicle=1;
 	while (n != 1){
-		//cout << n << endl;
 		if (n%2)
 			n = 3*n+1;
 		else
@@ -16,19 +17,18 @@ int calncicle (unsigned int n){
 }
 
 int main (int argc, char * argv []){
-	if (argc < 3){
-		cout << "Not enough parameters\n";
-		return 1;
+	
+	int ncicle = 0;
+	int maxncicle = 0;
+	int low;
+	int high;
+	cin >> low;
+	cin >> high;
+	for (int i = low; i <= high; i++){
+		ncicle = calncicle(i);
+		if (ncicle > maxncicle)
+			maxncicle = ncicle;
 	}
-	else{ 
-		int ncicle = 0;
-		int maxncicle = 0;
-		for (int i=atoi(argv[1]); i <= atoi(argv[2]); i++){
-			ncicle = calncicle(i);
-			if (ncicle > maxncicle)
-				maxncicle = ncicle;
-		}
-		cout << atoi(argv[1]) << " "  << atoi(argv[2]) << " "  << maxncicle << endl;
-	}
+	cout << low << " "  << high << " "  << maxncicle << endl;
 	return 0;
 }
