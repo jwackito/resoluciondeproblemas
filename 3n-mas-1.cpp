@@ -24,6 +24,8 @@ int main (int argc, char * argv []){
 	int high;
 	cin >> low;
 	cin >> high;
+	if (high < low )
+		swap(low, high);
 	for (int i = low; i <= high; i++){
 		ncicle = calncicle(i);
 		if (ncicle > maxncicle)
