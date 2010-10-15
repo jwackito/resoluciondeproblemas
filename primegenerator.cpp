@@ -41,10 +41,11 @@ int main(){
 		cin >> m;
 		cin >> n;
 		if (m == 2){
-			cout << m;
+			cout << m << endl;
 			m=3;
 		}
-		(m%2)?m:m+1;
+		if(!(m%2))
+			m++;
 		for (m; m <= n; m++){
 			if (isprime (m))
 				cout << m << endl;
