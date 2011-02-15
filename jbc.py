@@ -1,4 +1,4 @@
-#!/bin/python
+#!/usr/bin/python
 # -*- coding: utf-8 -*-
 
 #  JBC - Joaquin Bogado Cypher
@@ -69,14 +69,13 @@ def decrypt(ifile, ofile):
 	print "Done"
 
 def printusage():
-	print "Usage:\tjbcd input_file output_file [-c|-d]"
-	print "\t\tjbcd -h"
+	print "Usage:\tjbc.py input_file output_file [-c|-d]"
+	print "\t\tjbc.py -h"
 	print "\t-c crypt"
 	print "\t-d decrypt"
 	print "\t-h show this help"
 
-
-if len(argv) < 3:
+if (len(argv) != 4):
 	printusage()
 	exit(1)
 
